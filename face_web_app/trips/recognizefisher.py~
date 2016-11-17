@@ -1,0 +1,65 @@
+import cv2
+import time
+import os
+import numpy 
+import csv
+from PIL import Image
+# Append the images with the extension .sad into image_paths
+def usefisher(par):
+#firstly do the gender recognize
+    fisherrecognizer = cv2.createLBPHFaceRecognizer()
+
+    pathlbph=os.path.abspath(os.path.join(os.path.dirname(__file__),os.path.pardir))+'/fisher.xml'
+    fisherrecognizer.load(pathlbph)
+
+    path="/home/kevin/Django/mysitecopy%s"%(str(par))
+    predict_image_pil = Image.open(path).resize((320,243),Image.ANTIALIAS ).convert('L')
+    predict_image = numpy.array(predict_image_pil, 'uint8')
+    nbr_predicted, conf = fisherrecognizer.predict(predict_image[:])
+    
+
+    rec_csv_list=open('/home/kevin/Django/mysite/trips/recognizelist.csv')
+    data=csv.reader(rec_csv_list)
+    rec_i=0
+    count = len(open('/home/kevin/Django/mysite/trips/recognizelist.csv','rU').readlines())
+    recoglist = range(count*2)
+   # for personpath,personlabel in data:
+
+      #   p=personpath
+      #   l=int(personlabel)
+       #  recoglist[rec_i]=p
+     #    recoglist[rec_i+1]=l
+      #   rec_i=rec_i+2
+ #   for index in range(len(recoglist)):
+      #   if nbr_predicted==recoglist[index]:
+      #        pre_pic_path=recoglist[index-1]
+    
+    return nbr_predicted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

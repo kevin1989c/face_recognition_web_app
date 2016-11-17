@@ -1,0 +1,20 @@
+<form  method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<input type="file" name="img">
+<button type="submit">upload</button>
+</form>
+<form action="/search/" method="get">
+<button >compare</button>
+</form>
+<form action="/train/" method="get">
+<button >train</button>
+</form>
+<body> 
+    <p>{{stitu}}</p> 
+</body> 
+<form action="/adddata/" method="get">
+<button >add data</button>
+</form>
+<body> 
+    <p>{{sti}}</p> 
+</body> 

@@ -1,0 +1,9 @@
+
+<!-- index.html -->
+<html>
+<head><head>
+<body>
+    <h1>An Image Test</h1>
+    <img src="Pictures/ss.jpg">
+</body>
+</html>

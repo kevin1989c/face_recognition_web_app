@@ -1,0 +1,105 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LOOKING for a famous face </title>
+    <link href="//fonts.googleapis.com/css?family=Lemon" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//djangogirlstaipei.github.io/assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <h1 class="site-title text-center">
+            <a href="/">LOOKING for a famous face simlar to you...</a>
+        </h1>
+    </div>
+    <div class="container">
+
+          <div class="post-wrapper">
+            <div class="post">
+                <div class="post-heading">
+                    <h2 class="title">
+                        <a href="#"></a>
+                    </h2>
+                    <div class="date">{{ post.created_at|date:"Y / m / d" }}</div>
+                </div>
+
+                <div class="thumbnail">
+                    <img src="{{ imglast.img.url }}" height="90%"  alt="">
+                </div>
+              
+                <div class="post-content read-more-block" align="center" >
+                    {{ predi_gender}}<br><br>
+                    {{ predi_age }}
+                </div>
+                <div class="post-footer">
+                    <a class="read-more" href="#">
+                        Read More <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {%if predi_img1%}
+        <div class="post-wrapper">
+            <div class="post">
+                <div class="post-heading">
+                    <h2 class="title">
+                        <a href="#">Name: {{ predi_title1 }}</a>
+                    </h2>
+                    <div class="date">{{ post.created_at|date:"Y / m / d" }}</div>
+                </div>
+
+                <div class="thumbnail">
+                    <img src="{{ predi_img1.url }}" height="90%" alt="">
+                </div>
+                
+
+                <div class="post-content read-more-block">
+                    {{  predi_content1 }}
+                </div>
+                <div class="post-footer">
+                    <a class="read-more" href="#">
+                        Read More <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {%endif%}
+        {%if predi_img2%}
+        <div class="post-wrapper">
+            <div class="post">
+                <div class="post-heading">
+                    <h2 class="title">
+                        <a href="#">Name: {{ predi_title2 }}</a>
+                    </h2>
+                    <div class="date">{{ post.created_at|date:"Y / m / d" }}</div>
+                </div>
+
+                <div class="thumbnail">
+                    <img src="{{ predi_img2.url }}" height="90%" alt="">
+                </div>
+                
+
+                <div class="post-content read-more-block">
+                    {{  predi_content2 }}
+                </div>
+                <div class="post-footer">
+                    <a class="read-more" href="#">
+                        Read More <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {%endif%}
+       
+
+       
+
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+from django import forms
+from django.contrib.auth.models import User
+from bootstrap_toolkit.widgets import BootstrapDateInput, BootstrapTextInput, BootstrapUneditableInput
+
+class LoginForm(forms.Form):
+    username = forms.CharField(
+        required=True,
+        label=u"username",
+        error_messages={'required': 'need username'},
+        widget=forms.TextInput(
+            attrs={
+                'placeholder':u"username",
+            }
+        ),
+    )    
+    password = forms.CharField(
+        required=True,
+        label=u"password",
+        error_messages={'required': u'please type in your password'},
+        widget=forms.PasswordInput(
+            attrs={
+                'placeholder':u"password",
+            }
+        ),
+    )   
+    def clean(self):
+        if not self.is_valid():
+            raise forms.ValidationError(u"you must type in username and password")
+        else:
+            cleaned_data = super(LoginForm, self).clean() 

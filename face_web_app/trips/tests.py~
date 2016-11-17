@@ -1,0 +1,8 @@
+from django.test import TestCase
+import os
+
+
+print os.path.abspath(os.path.join(os.path.dirname(__file__),os.path.pardir))+'/../fisher.xml'
+file_path = os.path.join(os.path.dirname(__file__) + '/../fisher.xml')
+print os.path.join(os.path.dirname(__file__) + '/../fisher.xml')
+# Create your tests here.
